@@ -1,0 +1,23 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "intranetdev팀 study",
+  "main": "index.js",
+  "dependencies": {
+    "nconf": "^0.8.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://juhyun10:qwe5090@github.com/juhyun10/Node.js-study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juhyun10/Node.js-study/issues"
+  },
+  "homepage": "https://github.com/juhyun10/Node.js-study#readme"
+}
