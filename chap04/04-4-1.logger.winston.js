@@ -4,22 +4,14 @@ AUTHOR: Assu
 <<<<<<< HEAD
 DATE: 2017.05.05
 *******************************/
-var winston = require('winston');       // 로그 처리 모듈
-var winstonDaily = require('winston-daily-rotate-file');    // 로그 일별 처리 모듈
-var moment = require('moment');         // 시간 처리 모듈
-=======
-DATE: 2017.05.08
-*******************************/
 var winston = require('winston');                           // 로그 처리 모듈
 var winstonDaily = require('winston-daily-rotate-file');    // 로그 일별 처리 모듈
 var moment = require('moment');                             // 시간 처리 모듈
->>>>>>> parent of 0efdc40... 내꺼
+
 
 function timeStampFormat() {
     return moment().format('YYYY-MM-DD HH:mm:ss.SSS ZZ'); // '2016-05-01 20:14:28.500 +0900'
 }
-<<<<<<< HEAD
-=======
 
 var logger = new (winston.Logger) ({
     transports: [
@@ -89,4 +81,4 @@ fs.exists(outname, function(exists) {
     infile.pipe(outfile);
     logger.info('파일 복사 [' + inname + '] -> [' + outname + ']');
 });
->>>>>>> parent of 0efdc40... 내꺼
+
