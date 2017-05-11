@@ -22,3 +22,6 @@ Users.splice(2, 1);
 
 console.log('splice()로 인덱스 1의 요소를 1개 삭제한 후');
 console.dir(Users);
+
+Users.splice(2,1,{name:'하하',age:55});
+console.dir(Users);
