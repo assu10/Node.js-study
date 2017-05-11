@@ -4,6 +4,7 @@
   "description": "intranetdev팀 study",
   "main": "index.js",
   "dependencies": {
+    "moment": "^2.18.1",
     "nconf": "^0.8.4"
   },
   "devDependencies": {},
