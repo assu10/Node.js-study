@@ -15,15 +15,13 @@ server.listen(port, function() {
    console.log('웹서버 시작.', port); 
 });
 
-★request 오류남.
-
 // 클라이언트 요청 이벤트 처리
 server.on('request', function(req, res) {
     console.log('클라이언트 요청 들어옴.');
     
-    var filename = './house.png';
+    var filename = './chap05/house.png';
     fs.readFile(filename, function(err, data) {
-       res.writeHead(200, {"Content-Type": "image/png"}); 
+       res.writeHead(200, {"Content-Type": "image/png"});
         res.write(data);
         res.end();
     });
