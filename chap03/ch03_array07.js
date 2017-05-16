@@ -6,4 +6,4 @@ var Person = {
     }
 };
 
-console.log('더하기 : %d', Person.add(10, 10));
+console.log('더하기 : %d', Person.add(10, 10)); 
