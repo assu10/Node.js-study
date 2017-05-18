@@ -8,12 +8,13 @@ var path = require('path');
 
 // 디렉토리 합치기
 var directories = ["user", "mike", "docs"];
-var docsDirectory = directories.join(path.sep);     // path.set : \
+var docsDirectory = directories.join(path.sep);     // path.sep : \
 console.log('문서 디렉토리 : ', docsDirectory);       // user\mike\docs
 
 // 디렉토리명과 파일명 합치기
 var curPath = path.join('/users/mike', 'notepad.exe');
 console.log('파일 패스 : ', curPath);                   // \users\mike\notepad.exe
+
 
 // 패스에서 디렉토리, 파일명, 확장자 구분하기
 var filename = "C:\\Users\\mike\\notepad.exe";

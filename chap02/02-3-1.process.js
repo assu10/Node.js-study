@@ -3,8 +3,8 @@ TITLE: process 객체
 AUTHOR: Assu
 DATE: 2017.04.26
 *******************************/
-console.log('argv 속성의 파라니터 수 : ' + process.argv.length);
-console.dir(process.argv);
+console.log('argv 속성의 파라미터 수 : ' + process.argv.length);
+console.dir(process.argv);      // node.exe, 02-3-1.process.js
 console.log('-----------------------------------------');
 
 

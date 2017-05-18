@@ -7,3 +7,7 @@ DATE: 2017.04.27
 exports.add = function(a, b) {
     return a+b;
 };
+
+exports.multi = function(a, b) {
+    return a*b;
+}
