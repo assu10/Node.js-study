@@ -9,4 +9,8 @@ calc.add = function(a, b) {
     return a+b;
 };
 
+calc.multi = function(a, b) {
+  return a*b;  
+};
+
 module.exports = calc;
