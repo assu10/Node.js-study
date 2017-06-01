@@ -11,6 +11,8 @@ function add(a, b, callback) {
       return a + ' + ' + b + ' = ' + result;  
     };
     
+    console.log("dddd: ", history);
+    console.log("dddd2: ", history());
     return history;
 }
 

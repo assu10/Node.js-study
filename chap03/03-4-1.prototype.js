@@ -8,7 +8,7 @@ function Person(name, age) {
     this.age = age;
 }
 
-// Person 객체에 walk 함수를 속성으로 추
+// Person 객체에 walk 함수를 속성으로 추가
 Person.prototype.walk = function(speed) {
     console.log(speed + 'km 속도로 걸어갑니다.');
 };
@@ -18,3 +18,11 @@ var person02 = new Person('걸스데이', 22);
 
 console.log(person01.name + ' 객체의 walk(10) 호출함.');
 person01.walk(10);
+
+
+//////////////////////////////////////////////////////////////////
+
+Person.walk = function(speed) {
+    console.log(speed + 'km 속도로 걸어갑니다.');
+};
+Person.walk(20);
