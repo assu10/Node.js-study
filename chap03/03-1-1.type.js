@@ -5,7 +5,7 @@ DATE: 2017.05.02
 *******************************/
 
 var age = 20;
-console.log('나이 : ', age);
+console.log('나이 : %d', age);
 
 var name = '소녀시대';
-console.log('이름 : ', name);
+console.log('이름 : %s', name);

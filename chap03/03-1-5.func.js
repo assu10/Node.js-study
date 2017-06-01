@@ -5,6 +5,7 @@ AUTHOR: Assu
 DATE: 2017.05.02
 *******************************/
 var Person = {};
+
 Person.age = 20;
 Person.name = '소녀시대';
 Person.add = function(a, b) {
