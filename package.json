@@ -1,0 +1,21 @@
+{
+  "name": "node.js-study",
+  "version": "1.0.0",
+  "description": "Intranetdev Team Study (@dbtpdnjs, @juhyun10, @mandumeans, @mina3789, @yunhwali)",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juhyun10/Node.js-study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juhyun10/Node.js-study/issues"
+  },
+  "homepage": "https://github.com/juhyun10/Node.js-study#readme"
+}
