@@ -1,7 +1,7 @@
 var http = require('http');
 
 //웹 서버 객체를 만듭니다.
-var server = http.createServer();
+var server = http.createServer(); //server로 서버 객체 반환
 
 //웹 서버를 시작하여 3000번 포트에서 대기합니다.
 var port = 3000;
