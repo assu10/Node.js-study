@@ -29,6 +29,7 @@ server.on('request', function(req, res){
     var curlength = 0;
     
     fs.stat(filename, function(err, stats){
+        console.log('stats :',stats);
         filelength = stats.size;
     });
     

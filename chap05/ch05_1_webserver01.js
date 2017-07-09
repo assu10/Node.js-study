@@ -10,7 +10,7 @@ server.listen(port, function() {
 });
 
 //웹 서버를 시작하여 192.168.0.5 IP와 3000번 포트에서 대기하도록 설정합니다.
-var host = '192.168.0.5';
+var host = '127.0.0.1';
 var port = 3000;
 
 server.listen(port, host, '50000', function(){
