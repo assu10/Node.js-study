@@ -10,8 +10,9 @@ var app = express();
 
 // 미들웨어에서 응답 전송할 때 send 메소드 사용하여 JSON 데이터 전송
 app.use(function(req, res, next) {
-	console.log('첫번째 미들웨어에서 요청을 처리함.');
-	//res.status(403).send('Forbidden'); 상태코드를 전송 할 수있다.
+	console.log('첫번째 미들웨어에서 요청을 처리함.')
+    res.sendStatus(404)
+	//res.status(403).send('Forbidden'); //상태코드를 전송 할 수있다.
 	res.send({name:'소녀시대', age:20});
 });
 
