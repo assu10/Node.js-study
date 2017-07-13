@@ -50,10 +50,11 @@ app.use('/', router); // <- 라우터 등록과정인데 없으면 라우팅 안
 
 
 //Error redirection
+
+/*
 app.all('*', function(req, res){
     res.status(404).send('<h1> 페이지 없음 </h1>')
 })
-
 
 var exErrHandler = require('express-error-handler');
 
@@ -67,7 +68,7 @@ var errHandler = expressErrorHandler({
 app.use(exErrHandler.httpError(404));
 app.use(errHandler);
 
-
+*/
 /*
 app.use(function(req, res, next) {
 	console.log('첫번째 미들웨어에서 요청을 처리함.');

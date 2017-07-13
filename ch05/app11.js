@@ -1,3 +1,6 @@
+
+
+
 /**
 * test3.html
 */
@@ -29,6 +32,9 @@ app.use(static(path.join(__dirname, '/public')));
 
 console.log(__dirname);
 
+// cookie-parser 설정
+app.use(cookieParser());
+
 // 미들웨어에서 헤더와 파라미터 확인
 
 var router = express.Router();
@@ -47,7 +53,7 @@ router.route('/process/setUserCookie').get(function(req,res){
     //쿠키 생성
     res.cookie('user', {
        id: '태연',
-       name: '소녀시대',
+       name: '원더걸스',
        authorized: true
     });
 
@@ -55,22 +61,6 @@ router.route('/process/setUserCookie').get(function(req,res){
 });
 
 app.use('/', router); // <- 라우터 등록과정인데 없으면 라우팅 안됨
-
-
-router.route('/process/login/:name').post(function(req,res){
-   console.log('process login name 처리함');
-
-    var paramId = req.body.id || req.query.id;
-    var paramPassword = req.body.password || req.query.password;
-    var paramName = req.params.name;
-
-	res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-	res.write('<h1>Express 서버에서 응답한 결과입니다.</h1>');
-	res.write('<div><p>paramId : ' + paramId + '</p></div>');
-	res.write('<div><p>paramName : ' + paramName + '</p></div>');
-	res.write('<div><p>paramPassword : ' + paramPassword + '</p></div>');
-	res.end();
-});
 
 
 //Error redirection
@@ -90,8 +80,6 @@ var errHandler = exErrHandler({
 
 app.use(exErrHandler.httpError(404));
 app.use(errHandler);
-
-
 /*
 app.use(function(req, res, next) {
 	console.log('첫번째 미들웨어에서 요청을 처리함.');
@@ -104,12 +92,10 @@ app.use(function(req, res, next) {
 	res.write('<div><p>paramId : ' + paramId + '</p></div>');
 	res.write('<div><p>paramPassword : ' + paramPassword + '</p></div>');
 	res.end();
-});
-*/
+});*/
 
 // Express 서버 시작
 http.createServer(app).listen(3000, function(){
   console.log('Express 서버가 3000번 포트에서 시작됨.');
 });
-
 

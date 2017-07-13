@@ -50,15 +50,16 @@ app.use('/', router); // <- 라우터 등록과정인데 없으면 라우팅 안
 
 
 //Error redirection
+/*
 app.all('*', function(req, res){
     res.status(404).send('<h1> 페이지 없음 </h1>')
 })
-
+*/
 
 var exErrHandler = require('express-error-handler');
 
 //404에러 정의
-var errHandler = expressErrorHandler({
+var errHandler = exErrHandler({
     static: {
         '404' : './public/404.html'
     }
