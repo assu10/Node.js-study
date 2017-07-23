@@ -75,6 +75,89 @@ function connectDB() {
     });
 }
 
+//===== 사용자를 인증하는 함수 =====//
+
+var authUser = function(database, id, password, callback) {
+    console.log('authUser 호출됨 : ', id + ', ' + password);
+    
+    // users 컬렉션 참조
+    var users = database.collection('users');
+    
+    // 아이디와 비밀번호를 이용해 검색
+    // 조회결과를 toArray() 메소드를 이용해 배열 객체로 변환함
+    // toArray()의 파라미터로 전달되는 콜백 함수에는 toArray()로 변환된 문서 객체가 전달됨
+    users.find({'id':id, 'password':password}).toArray(function(err, docs) {
+        // 에러 발생 시 콜백 함수를 호출하면서 에러 객체 전달
+        if (err) {
+            callback(err, null);
+            return;
+        }
+        
+        if (docs.length > 0) {
+            // 조회한 레코드가 있는 경우 콜백 함수를 호출하면서 조회 결과 전달
+            console.log('아이디 [%s], 패스워드 [%s] 가 일치하는 사용자 찾음.', id, password);
+            callback(null, docs);
+        } else {
+            // 조회한 레코드가 없는 경우 콜백 함수 호출하면서 null, null 전달
+            console.log("일치하는 사용자를 찾지 못함.");
+            callback(null, null);
+        }
+    });
+};
+
+
+
+//===== 사용자를 추가하는 함수 =====//
+
+var addUser = function(database, id, password, name, callback) {
+    console.log('addUser 호출됨 : ' + id + ', ' + password + ', ' + name);
+    
+    // users 컬렉션 참조
+    var users = database.collection('users');
+    
+    // 사용자 추가
+    users.insertMany([{'id':id, 'password':password, 'name':name}], function(err, result) {
+        if (err) {
+            callback(err, null);
+            return;
+        }
+        
+        if (result.insertedCount > 0) {
+            console.log('사용자 레코드 추가됨', result.insertedCount);
+        } else {
+            console.log('추가된 레코드가 없음');
+        }
+        
+        callback(null, result);
+    });
+};
+
+
+//===== 사용자를 수정하는 함수 =====//
+
+var updateUser = function(database, id, password, name, callback) {
+    console.log('updateUser 호출됨 : ' + id + ', ' + password + ', ' + name);
+    
+    // users 컬렉션 참조
+    var users = database.collection('users');
+    
+    users.updateOne({'id':id}, {'id':id, 'password':password, 'name':name}, function(err, result) {
+        if (err) {
+            callback(err, null);
+            return;
+        }
+        
+        if (result.modifiedCount > 0) {
+            console.log("사용자 레코드 수정됨 : " + result.modifiedCount);
+        } else {
+            console.log("수정된 레코드가 없음.");
+        }
+        
+        callback(null, result);
+    });
+};
+
+
 
 //===== 라우팅 함수 등록 =====//
 
@@ -108,7 +191,7 @@ router.route('/process/login').post(function(req, res) {
                 res.write('<h1>로그인 성공</h1>');
 				res.write('<div><p>사용자 아이디 : ' + paramId + '</p></div>');
 				res.write('<div><p>사용자 이름 : ' + username + '</p></div>');
-				res.write("<br><br><a href='/public/login.html'>다시 로그인하기</a>");
+				res.write("<br><br><a href='/public/06-2-1.login.html'>다시 로그인하기</a>");
 				res.end();
             } else {
                 // 조회된 레코드가 없으면 실패 응답 전송
@@ -196,88 +279,6 @@ app.post('/process/updateuser', function(req, res) {
 // 라우터 객체 등록
 app.use('/', router);
 
-
-//===== 사용자를 인증하는 함수 =====//
-
-var authUser = function(database, id, password, callback) {
-    console.log('authUser 호출됨 : ', id + ', ' + password);
-    
-    // users 컬렉션 참조
-    var users = database.collection('users');
-    
-    // 아이디와 비밀번호를 이용해 검색
-    // 조회결과를 toArray() 메소드를 이용해 배열 객체로 변환함
-    // toArray()의 파라미터로 전달되는 콜백 함수에는 toArray()로 변환된 문서 객체가 전달됨
-    users.find({'id':id, 'password':password}).toArray(function(err, docs) {
-        // 에러 발생 시 콜백 함수를 호출하면서 에러 객체 전달
-        if (err) {
-            callback(err, null);
-            return;
-        }
-        
-        if (docs.length > 0) {
-            // 조회한 레코드가 있는 경우 콜백 함수를 호출하면서 조회 결과 전달
-            console.log('아이디 [%s], 패스워드 [%s] 가 일치하는 사용자 찾음.', id, password);
-            callback(null, docs);
-        } else {
-            // 조회한 레코드가 없는 경우 콜백 함수 호출하면서 null, null 전달
-            console.log("일치하는 사용자를 찾지 못함.");
-            callback(null, null);
-        }
-    });
-};
-
-
-
-//===== 사용자를 추가하는 함수 =====//
-
-var addUser = function(database, id, password, name, callback) {
-    console.log('addUser 호출됨 : ' + id + ', ' + password + ', ' + name);
-    
-    // users 컬렉션 참조
-    var users = database.collection('users');
-    
-    // 사용자 추가
-    users.insertMany([{'id':id, 'password':password, 'name':name}], function(err, result) {
-        if (err) {
-            callback(err, null);
-            return;
-        }
-        
-        if (result.insertedCount > 0) {
-            console.log('사용자 레코드 추가됨', result.insertedCount);
-        } else {
-            console.log('추가된 레코드가 없음');
-        }
-        
-        callback(null, result);
-    });
-};
-
-
-//===== 사용자를 수정하는 함수 =====//
-
-var updateUser = function(database, id, password, name, callback) {
-    console.log('updateUser 호출됨 : ' + id + ', ' + password + ', ' + name);
-    
-    // users 컬렉션 참조
-    var users = database.collection('users');
-    
-    users.updateOne({'id':id}, {'id':id, 'password':password, 'name':name}, function(err, result) {
-        if (err) {
-            callback(err, null);
-            return;
-        }
-        
-        if (result.modifiedCount > 0) {
-            console.log("사용자 레코드 수정됨 : " + result.modifiedCount);
-        } else {
-            console.log("수정된 레코드가 없음.");
-        }
-        
-        callback(null, result);
-    });
-};
 
 //===== 404 에러 페이지 =====//
 
