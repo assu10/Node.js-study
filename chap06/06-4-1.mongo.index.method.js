@@ -106,6 +106,7 @@ function connectDB() {
         console.log('UserSchema 정의함');
         
         // UserModel 정의
+        // users2는 이제 구조체가 되고, new를 이용해서 생성 가능하게 됨.
         UserModel = mongoose.model('users2', UserSchema);
         console.log('UserModel 정의함');
     });
