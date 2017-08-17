@@ -4,9 +4,6 @@
  * 웹브라우저에서 아래 주소로 요청
  *    http://localhost:3000/process/showCookie
  *    http://localhost:3000/process/setUserCookie
- *
- * @date 2016-10-25
- * @author Mike
  */
 
 // Express 기본 모듈 불러오기
@@ -37,7 +34,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use('/public', static(path.join(__dirname, 'public')));
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 // cookie-parser 설정
 app.use(cookieParser());
 

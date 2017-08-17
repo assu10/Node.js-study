@@ -1,8 +1,5 @@
 /**
  * express-error-handler 모듈을 이용해 에러 처리하기
- *
- * @date 2016-10-25
- * @author Mike
  */
 
 // Express 기본 모듈 불러오기
@@ -54,9 +51,11 @@ app.use('/', router);
 
 
 // 등록되지 않은 패스에 대해 페이지 오류 응답
+/*
 app.all('*', function(req, res) {
 	res.status(404).send('<h1>ERROR - 페이지를 찾을 수 없습니다.</h1>');
 });
+*/
 
 
 // 404 에러 페이지 처리
