@@ -55,10 +55,10 @@ function createUserSchema() {
                     this.id = splitted[0];
                     this.name = splitted[1];
                     console.log('virtual info 설정함: %s, %s', this.id, this.name);
-                })
-              .get(function() {
-                    return this.id + '88 88' + this.name;
                 });
+              /*.get(function() {
+                    return this.id + '88 88' + this.name;
+                });*/
     console.log('UserSchema 정의함');
     
     // UserModel 정의
@@ -72,7 +72,7 @@ function createUserSchema() {
 function doTest() {
     // UserModel 인스턴스 생성
     // id, name 속성은 할당하지 않고 info 속성만 할당함
-    var user = new UserModel({'info': 'test01 씨스타'});
+    var user = new UserModel({'info': 'test06 씨스타33'});
     
     // save()로 저장
     user.save(function(err) {
@@ -90,8 +90,9 @@ function doTest() {
 function findAll() {
     UserModel.find({}, function(err, results) {
         if (err) { throw err; }
+        console.log('result :',  results);
         if (results) {
-            console.log('조회된 user 문서 객체 #0 -> id : %s, name : %s', results[0]._doc.id, results[0].name);
+            console.log('조회된 user 문서 객체 #0 -> id : %s, name : %s, ', results[2]._doc.id, results[2].name);
         }
     });
 }

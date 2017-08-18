@@ -132,10 +132,12 @@ var authUser = function(database, id, password, callback) {
         }
         
         console.log('아이디 사용자 검색결과', results);
-        console.log('아이디 사용자 검색결과_docs', results[0]._docs);
+        console.log('아이디 사용자 검색결과_doc1', results[0]._doc.password);
+        console.log('아이디 사용자 검색결과_doc2', results[0].password);
         
         if (results.length > 0) {
             console.log('아이디와 일치하는 사용자 찾음');
+            
             
             // 2. 패스워드 확인
             if (results[0].password === password) {
