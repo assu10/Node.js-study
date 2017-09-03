@@ -3,9 +3,6 @@
  *
  * (1) 웹 브라우저에서 http://localhost:3000/public/login2.html 페이지 열고 요청
  * (2) 크롬 브라우저의 Postman 앱이나 기타 POST 요청 도구를 사용하여 POST 방식으로 요청
- *
- * @date 2016-10-25
- * @author Mike
  */
 
 // Express 기본 모듈 불러오기
