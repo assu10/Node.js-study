@@ -3,7 +3,19 @@
   "version": "1.0.0",
   "description": "Intranetdev Team Study (@dbtpdnjs, @juhyun10, @mandumeans, @mina3789, @yunhwali)",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "errorhandler": "^1.5.0",
+    "express": "^4.15.4",
+    "express-error-handler": "^1.1.0",
+    "express-session": "^1.15.5",
+    "http": "0.0.0",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.9",
+    "path": "^0.12.7",
+    "serve-static": "^1.12.4"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
