@@ -9,8 +9,12 @@ var mongoose = require('mongoose');
 // database 객체에 db, schema, model 모두 추가
 var database = {};
 
+<<<<<<< Updated upstream
 // 초기화를 위해 호출하는 함수 
 // database 연결
+=======
+// 초기화를 위해 호출하는 함수
+>>>>>>> Stashed changes
 database.init = function(app, config) {
 	console.log('init() 호출됨.');
 	
@@ -38,7 +42,11 @@ function connect(app, config) {
 
 }
 
+<<<<<<< Updated upstream
 // config.js db_schemas 에 정의된 스키마 및 모델 객체 생성
+=======
+// config에 정의된 스키마 및 모델 객체 생성
+>>>>>>> Stashed changes
 function createSchema(app, config) {
 	var schemaLen = config.db_schemas.length;
 	console.log('설정에 정의된 스키마의 수 : %d', schemaLen);
