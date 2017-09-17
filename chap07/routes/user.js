@@ -3,6 +3,22 @@
  * 데이터베이스 관련 객체들을 req.app.get('database')로 참조
  */
 
+<<<<<<< Updated upstream
+=======
+var database;
+var UserSchema;
+var UserModel;
+
+// 데이터베이스 객체, 스키마 객체, 모델 객체를 이 모듈에서 사용할 수 있도록 전달함
+var init = function(db, schema, model) {
+    console.log('init 호출됨');
+    
+    database = db;
+    UserSchema = schema;
+    UserModel = model;
+}
+
+>>>>>>> Stashed changes
 var login = function(req, res) {
 	console.log('user(user2.js) 모듈 안에 있는 login 호출됨.');
 
@@ -219,7 +235,12 @@ var addUser = function(database, id, password, name, callback) {
 	});
 }
 
+<<<<<<< Updated upstream
 
+=======
+//exports 시킴 
+module.exports.init = init;
+>>>>>>> Stashed changes
 module.exports.login = login;
 module.exports.adduser = adduser;
 module.exports.listuser = listuser;

@@ -1,8 +1,20 @@
 /**
- * 모듈화하기
+ * 데이터베이스 사용하기
  * 
- * 이전 장(데이터베이스 사용하기)에서 만들었던 웹서버 코드 중 상당 부분을 모듈화하기
+ * 설정 파일과 데이터베이스 스키마 파일들을 로딩하는 모듈 파일 추가하기
+ *
+ * config.js
+ * database/database.js
+ *
+ * 웹브라우저에서 아래 주소의 페이지를 열고 웹페이지에서 요청
+ * (먼저 사용자 추가 후 로그인해야 함)
+ *    http://localhost:3000/public/login.html
+ *    http://localhost:3000/public/adduser2.html
+ *
+ * @date 2016-11-10
+ * @author Mike
  */
+
 
 // Express 기본 모듈 불러오기
 var express = require('express')
@@ -20,27 +32,21 @@ var expressErrorHandler = require('express-error-handler');
 
 // Session 미들웨어 불러오기
 var expressSession = require('express-session');
-  
+ 
 
-// 모듈로 분리한 설정 파일 불러오기
+// 설정을 위한 모듈 파일 로딩
 var config = require('./config');
 
-// 모듈로 분리한 데이터베이스 파일 불러오기
+// 데이터베이스 스키마 파일들을 위한 모듈 파일 로딩
 var database = require('./database/database');
 
-// 모듈로 분리한 라우팅 파일 불러오기
-var route_loader = require('./routes/route_loader');
-
- 
 
 // 익스프레스 객체 생성
 var app = express();
 
-
-//===== 서버 변수 설정 및 static으로 public 폴더 설정  =====//
+// 설정 파일에 들어있는 port 정보 사용하여 포트 설정
 console.log('config.server_port : %d', config.server_port);
-app.set('port', process.env.PORT || 3000);
- 
+app.set('port', config.server_port);
 
 // body-parser를 이용해 application/x-www-form-urlencoded 파싱
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -60,11 +66,10 @@ app.use(expressSession({
 	resave:true,
 	saveUninitialized:true
 }));
+ 
 
-
-
-// 라우팅 정보를 읽어들여 라우팅 설정
-route_loader.init(app, express.Router());
+// 설정 파일의 정보를 이용해 라우팅 함수 설정
+config.initRoutes(app);
 
 
 
@@ -89,17 +94,16 @@ process.on('SIGTERM', function () {
 
 app.on('close', function () {
 	console.log("Express 서버 객체가 종료됩니다.");
-	if (database.db) {
-		database.db.close();
+	if (database) {
+		database.close();
 	}
 });
 
 // Express 서버 시작
 http.createServer(app).listen(app.get('port'), function(){
-    console.log('서버가 시작되었습니다. 포트 : ' + app.get('port'));
+  console.log('서버가 시작되었습니다. 포트 : ' + app.get('port'));
 
-    // 데이터베이스 초기화
-    database.init(app, config);
+  // 데이터베이스 모듈 파일을 이용해 데이터베이스 초기화
+  database.init(app, config);
    
 });
-

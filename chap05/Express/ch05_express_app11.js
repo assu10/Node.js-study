@@ -1,8 +1,5 @@
 /**
  * URL 파라미터를 params 객체로 확인하기
- * 
- * @date 2016-10-25
- * @author Mike
  */
 
 // Express 기본 모듈 불러오기
@@ -28,7 +25,7 @@ app.use(bodyParser.json())
 
 app.use('/public', static(path.join(__dirname, 'public')));
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////
 // 라우터 사용하여 라우팅 함수 등록
 var router = express.Router();
 

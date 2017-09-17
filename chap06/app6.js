@@ -1,8 +1,16 @@
 
 /**
- * 모듈화하기
+ * 데이터베이스 사용하기
  * 
- * 이전 장(데이터베이스 사용하기)에서 만들었던 웹서버 코드 중 일부를 모듈화하기
+ * 라우팅과 몽고디비 관련 함수를 모듈로 구성하기
+ *
+ * 웹브라우저에서 아래 주소의 페이지를 열고 웹페이지에서 요청
+ * (먼저 사용자 추가 후 로그인해야 함)
+ *    http://localhost:3000/public/login.html
+ *    http://localhost:3000/public/adduser2.html
+ *
+ * @date 2016-11-10
+ * @author Mike
  */
 
 
@@ -25,11 +33,9 @@ var expressSession = require('express-session');
  
 // mongoose 모듈 사용
 var mongoose = require('mongoose');
+ 
 
-// crypto 모듈 불러들이기
-var crypto = require('crypto');
-
-
+// 사용자 정의 모듈 - 사용자 정보 처리
 var user = require('./routes/user');
 
  
@@ -60,7 +66,7 @@ app.use(expressSession({
 	saveUninitialized:true
 }));
 
-
+ 
 
 //===== 데이터베이스 연결 =====//
 
@@ -68,10 +74,10 @@ app.use(expressSession({
 var database;
 
 // 데이터베이스 스키마 객체를 위한 변수 선언
-//var UserSchema;
+var UserSchema;
 
 // 데이터베이스 모델 객체를 위한 변수 선언
-//var UserModel;
+var UserModel;
 
 //데이터베이스에 연결
 function connectDB() {
@@ -90,7 +96,7 @@ function connectDB() {
 		
         
 		// user 스키마 및 모델 객체 생성
-		createUserSchema(database);
+		createUserSchema();
 		
 		
 	});
@@ -101,21 +107,32 @@ function connectDB() {
         setInterval(connectDB, 5000);
     });
     
-    // 1. app 객체에 database 속성 추가
+    
+	// 1. app 객체에 database 속성 추가
 	app.set('database', database);
+		
 }
 
- 
-// user 스키마 및 모델 객체 생성
-function createUserSchema(database) {
+
+// 사용자 스키마 및 모델 객체 생성
+function createUserSchema() {
 
 	// 2. user_schema.js 모듈 불러오기
-	database.UserSchema = require('./database/user_schema').createSchema(mongoose);
+	UserSchema = require('./schemas/user_schema').createSchema(mongoose);
 	
 	
-	// User 모델 정의
-	database.UserModel = mongoose.model("users3", database.UserSchema);
-	console.log('UserModel 정의함.');
+	// UserModel 모델 객체 생성
+	UserModel = mongoose.model("users3", UserSchema);
+	console.log('users3 정의함.');
+	
+	
+	// 3. UserSchema와 UserModel 객체를 app에 추가
+	app.set('UserSchema', UserSchema);
+	app.set('UserModel', UserModel);
+	
+	
+	// init 호출
+	user.init(database, UserSchema, UserModel);
 	
 }
 
@@ -127,21 +144,18 @@ function createUserSchema(database) {
 // 라우터 객체 참조
 var router = express.Router();
 
-
 // 4. 로그인 처리 함수를 라우팅 모듈을 호출하는 것으로 수정
 router.route('/process/login').post(user.login);
-
 
 // 5. 사용자 추가 함수를 라우팅 모듈을 호출하는 것으로 수정
 router.route('/process/adduser').post(user.adduser);
 
-
 // 6. 사용자 리스트 함수를 라우팅 모듈을 호출하는 것으로 수정
 router.route('/process/listuser').post(user.listuser);
 
-
 // 라우터 객체 등록
 app.use('/', router);
+
 
 
 
@@ -179,4 +193,3 @@ http.createServer(app).listen(app.get('port'), function(){
   connectDB();
    
 });
-
