@@ -2,7 +2,7 @@
 TITLE: 데이터베이스 스키마를 정의하는 모듈
 
 AUTHOR: Assu
-DATE: 2017.09.21
+DATE: 2017.09.22
 *******************************/
 
 var crypto = require('crypto');
@@ -29,11 +29,14 @@ Schema.createUserSchema = function(mongoose) {
     // password를 hashed_password로 변경, 각 컬럼에 default 속성 모두 추가, salt 속성 추가
     var UserSchema = mongoose.Schema({
         email: {type: String, required: true, unique: true, 'default': ''}
-        , assu_hashed_password: {type: String, required: true, 'default':''}
+        , assu_hashed_password: {type: String, 'default':''}
         , name: {type: String, index: 'hashed', 'default':''}
-        , salt: {type: String, required: true}
+        , salt: {type: String}
         , created_at: {type: Date, index: {unique: false}, 'default': Date.now}
         , updated_at: {type: Date, index: {unique: false}, 'default': Date.now}
+        , provider : {type: String, 'default': ''}      // facebook, twitter처럼 사용자 인증 서비스를 제공하는 서비스 제공자 이름
+        , authToken : {type : String, 'default': ''}    // 인증서비스를 제공하는 서버에서 응답받은 access token값
+        , facebook : {}     // 응답받은 사용자 정보 객체르르 그대로 저장
     });
     
     // password를 virtual 메소드로 정의: mongoDB에 저장되지 않는 가상 속성임
@@ -82,15 +85,15 @@ Schema.createUserSchema = function(mongoose) {
     });
     
     // 값이 유효한지 확인하는 함수
-    var validatePresenceOf = function(value) {
+    /*var validatePresenceOf = function(value) {
         console.log('값이 유효한지 확인하는 함수 value : %s, value.length : %s', value, value.length);
         
         return value && value.length;
-    };
+    };*/
     
     // 저장 시의 트리거 함수 정의 (password 필드가 유효하지 않으면 에러 발생)
     // 신규 데이터면 바로 저장하고, 기존 데이터면 유효성검사
-    UserSchema.pre('save', function(next) {
+    /*UserSchema.pre('save', function(next) {
         // 도큐먼트의 신규여부에 따라 true/false값 리턴
         if (!this.isNew) { return next(); }
         
@@ -99,7 +102,7 @@ Schema.createUserSchema = function(mongoose) {
         } else {
             next();
         }
-    });
+    });*/
     
     // 필수 속성에 대한 유효성 확인 (길이값 체크)
     // path() : 스카마 타입 얻기
@@ -108,9 +111,6 @@ Schema.createUserSchema = function(mongoose) {
         return email.length;
     }, 'id 컬럼의 값이 없음');
     
-    UserSchema.path('assu_hashed_password').validate(function(assu_hashed_password) {
-        return assu_hashed_password;
-    }, 'hashed_password 컬럼의 값이 없음');
     
     // 모델 객체에서 사용가능한 메소드 정의
     // 스키마에 static으로 findById 메소드 추가

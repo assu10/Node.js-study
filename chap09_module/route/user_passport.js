@@ -11,7 +11,16 @@ module.exports = function(router, passport) {
         console.log('/ 패스 요청됨.');
 
         // 단순히 views 폴더안에 있는 index.ejs 뷰 템플릿으로 응답 웹문서를 만든 후 응답을 보내주는 역할
-        res.render('index.ejs');    
+        //res.render('index.ejs');   
+        
+        // 인증 안된 경우
+        if (!req.user) {
+            console.log('사용자 인증 안된 상태임.');
+            res.render('index.ejs', {login_success:false});
+        } else {
+            console.log('사용자 인증된 상태임.');
+            res.render('index.ejs', {login_success:true});
+        }
     });
 
     // 로그인 화면 - login.ejs 템플릿을 이용해 로그인 화면이 보이도록 함.
@@ -75,14 +84,15 @@ module.exports = function(router, passport) {
         res.redirect('/');
     });
     
-    /*// 패스포트 - 페이스북 인증 라우팅 
+    // 패스포트 - 페이스북 인증 라우팅 
     router.route('/auth/facebook').get(passport.authenticate('facebook', { 
         scope : 'email' 
     }));
 
     // 패스포트 - 페이스북 인증 콜백 라우팅
+    // 페이스북 인증이 완료된 상태를 의미함.
     router.route('/auth/facebook/callback').get(passport.authenticate('facebook', {
         successRedirect : '/profile',
         failureRedirect : '/'
-    }));*/
+    }));
 };
