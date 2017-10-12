@@ -25,11 +25,7 @@
 <<<<<<< HEAD
     "socket.io": "^1.7.4"
 =======
-<<<<<<< HEAD
-    "socket.io": "^1.7.4"
-=======
     "socket.io": "^1.5.1"
 >>>>>>> 674c0b6... chatExample
->>>>>>> master
   }
 }

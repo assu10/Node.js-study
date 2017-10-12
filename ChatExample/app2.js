@@ -183,13 +183,8 @@ io.sockets.on('connection', function(socket) {
             //io.sockets.emit('message', message);
             socket.broadcast.emit('message', message);
 =======
-<<<<<<< HEAD
-            //io.sockets.emit('message', message);
-            socket.broadcast.emit('message', message);
-=======
             io.sockets.emit('message', message);
 >>>>>>> 674c0b6... chatExample
->>>>>>> master
         }
     });
     
