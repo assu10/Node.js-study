@@ -187,7 +187,14 @@ io.sockets.on('connection', function(socket) {
 
         // 기존 클라이언트 ID가 없으면 클라이언트 ID를 맵에 추가
         console.log('접속한 소켓의 ID : ' + socket.id);
+<<<<<<< HEAD
         console.log('접속한 소켓의login.id : ' + login.id);
+=======
+<<<<<<< HEAD
+        console.log('접속한 소켓의login.id : ' + login.id);
+=======
+>>>>>>> 674c0b6... chatExample
+>>>>>>> master
         login_ids[login.id] = socket.id;
         socket.login_id = login.id;
 
@@ -197,6 +204,10 @@ io.sockets.on('connection', function(socket) {
         sendResponse(socket, 'login', '200', '로그인되었습니다.');
     });
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> master
     // 'logout' 이벤트를 받았을 때의 처리
     socket.on('logout', function(logout) {
     	console.log('logout 이벤트를 받았습니다.');
@@ -211,6 +222,11 @@ io.sockets.on('connection', function(socket) {
         // 응답 메시지 전송
         sendResponse(socket, 'login', '200', '로그아웃되었습니다.');
     });
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 674c0b6... chatExample
+>>>>>>> master
     
     // 'message' 이벤트를 받았을 때의 처리
     socket.on('message', function(message) {
@@ -234,7 +250,14 @@ io.sockets.on('connection', function(socket) {
         	}
         }
     });
+<<<<<<< HEAD
      
+=======
+<<<<<<< HEAD
+     
+=======
+>>>>>>> 674c0b6... chatExample
+>>>>>>> master
     
 });
 
