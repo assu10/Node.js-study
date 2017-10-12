@@ -22,6 +22,10 @@
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.4",
     "serve-static": "^1.11.2",
+<<<<<<< HEAD
     "socket.io": "^1.7.4"
+=======
+    "socket.io": "^1.5.1"
+>>>>>>> 674c0b6... chatExample
   }
 }

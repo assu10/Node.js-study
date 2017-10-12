@@ -179,8 +179,12 @@ io.sockets.on('connection', function(socket) {
         if(message.recepient =='ALL') {
             // 나를 포함한 모든 클라이언트에게 메시지 전달
         	console.dir('나를 포함한 모든 클라이언트에게 message 이벤트를 전송합니다.')
+<<<<<<< HEAD
             //io.sockets.emit('message', message);
             socket.broadcast.emit('message', message);
+=======
+            io.sockets.emit('message', message);
+>>>>>>> 674c0b6... chatExample
         }
     });
     
