@@ -6,6 +6,8 @@ TITLE: 채팅하기
           'room' 이벤트 처리 (command에 방 입장 기능 추가 : join)
         
             http://localhost:3000/public/chat05.html
+            http://localhost:3000/public/client03.html
+            http://localhost:3000/public/client04.html
         
 AUTHOR: Assu
 DATE: 2017.10.12
