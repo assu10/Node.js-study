@@ -17,10 +17,14 @@ var handler_info = [
 	,{file:'./echo_error', method:'echo_error'}		// echo_error       
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bb88392... chap11. JSON-RPC 서버 만들기 (4.데이터 부분을 암호화하기)
 	,{file:'./add', method:'add'}					// 더하기
 	//,{file:'./multiply', method:'multiply'}			// 곱하기
 	,{file:'./listuser', method:'listuser'}			// 사용자 리스트
 	,{file:'./echo_encrypted', method:'echo_encrypted'}			// 암호화된 echo
+<<<<<<< HEAD
 =======
 	/*,{file:'./add', method:'add'}					// 더하기
 	,{file:'./multiply', method:'multiply'}			// 곱하기
@@ -37,6 +41,8 @@ var handler_info = [
 	,{file:'./listuser', method:'listuser'}			// 사용자 리스트
 	/*,{file:'./echo_encrypted', method:'echo_encrypted'}			// 암호화된 echo*/
 >>>>>>> d145bfd... chap11. JSON-RPC 서버 만들기 (3.데이터베이스에서 사용자 리스트 조회하기)
+=======
+>>>>>>> bb88392... chap11. JSON-RPC 서버 만들기 (4.데이터 부분을 암호화하기)
 ];
 
 module.exports = handler_info;

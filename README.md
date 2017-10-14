@@ -46,8 +46,14 @@ Downloads
 
 - JSON-RPC 클라이언트 라이브러리 (https://github.com/datagraph/jquery-jsonrpc)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 - crypto-js (https://code.google.com/archive/p/crypto-js)
 >>>>>>> 7c1bc86... chap11. JSON-RPC 서버 만들기 (4.데이터 부분을 암호화하기)
 =======
 >>>>>>> d99019b... chap11. JSON-RPC 서버 만들기 (1.JSON-RPC를 웹 서버에 적용하기)
+=======
+
+- crypto-js (https://code.google.com/archive/p/crypto-js)
+>>>>>>> 7c1bc86... chap11. JSON-RPC 서버 만들기 (4.데이터 부분을 암호화하기)
+>>>>>>> bb88392... chap11. JSON-RPC 서버 만들기 (4.데이터 부분을 암호화하기)

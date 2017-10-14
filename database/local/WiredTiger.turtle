@@ -7,10 +7,14 @@ file:WiredTiger.wt
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bb88392... chap11. JSON-RPC 서버 만들기 (4.데이터 부분을 암호화하기)
 access_pattern_hint=none,allocation_size=4KB,app_metadata=,block_allocation=best,block_compressor=,cache_resident=false,checkpoint=(WiredTigerCheckpoint.32=(addr="018081e46d7ef5fc8181e497c8e0ad8281e485ebbab1808080e3012fc0e26fc0",order=32,time=1502950430,size=40960,write_gen=68)),checkpoint_lsn=(3,57216),checksum=uncompressed,collator=,columns=,dictionary=0,encryption=(keyid=,name=),format=btree,huffman_key=,huffman_value=,id=0,ignore_in_memory_cache_size=false,internal_item_max=0,internal_key_max=0,internal_key_truncate=true,internal_page_max=4KB,key_format=S,key_gap=10,leaf_item_max=0,leaf_key_max=0,leaf_page_max=32KB,leaf_value_max=0,log=(enabled=true),memory_page_max=5MB,os_cache_dirty_max=0,os_cache_max=0,prefix_compression=false,prefix_compression_min=4,split_deepen_min_child=0,split_deepen_per_child=0,split_pct=90,value_format=S,version=(major=1,minor=1)
 =======
 access_pattern_hint=none,allocation_size=4KB,app_metadata=,block_allocation=best,block_compressor=,cache_resident=false,checkpoint=(WiredTigerCheckpoint.22=(addr="018881e44b8c6f7d8981e4fb0aa1f38a81e48bd8cd85808080e3012fc0e24fc0",order=22,time=1507984495,size=32768,write_gen=40)),checkpoint_lsn=(5,5120),checksum=uncompressed,collator=,columns=,dictionary=0,encryption=(keyid=,name=),format=btree,huffman_key=,huffman_value=,id=0,ignore_in_memory_cache_size=false,internal_item_max=0,internal_key_max=0,internal_key_truncate=true,internal_page_max=4KB,key_format=S,key_gap=10,leaf_item_max=0,leaf_key_max=0,leaf_page_max=32KB,leaf_value_max=0,log=(enabled=true),memory_page_max=5MB,os_cache_dirty_max=0,os_cache_max=0,prefix_compression=false,prefix_compression_min=4,split_deepen_min_child=0,split_deepen_per_child=0,split_pct=90,value_format=S,version=(major=1,minor=1)
 >>>>>>> 7c1bc86... chap11. JSON-RPC 서버 만들기 (4.데이터 부분을 암호화하기)
+<<<<<<< HEAD
 =======
 access_pattern_hint=none,allocation_size=4KB,app_metadata=,block_allocation=best,block_compressor=,cache_resident=false,checkpoint=(WiredTigerCheckpoint.8=(addr="018381e4c0e5ba988481e4807672c28581e450acc385808080e2efc0e22fc0",order=8,time=1507979474,size=24576,write_gen=15)),checkpoint_lsn=(2,5376),checksum=uncompressed,collator=,columns=,dictionary=0,encryption=(keyid=,name=),format=btree,huffman_key=,huffman_value=,id=0,ignore_in_memory_cache_size=false,internal_item_max=0,internal_key_max=0,internal_key_truncate=true,internal_page_max=4KB,key_format=S,key_gap=10,leaf_item_max=0,leaf_key_max=0,leaf_page_max=32KB,leaf_value_max=0,log=(enabled=true),memory_page_max=5MB,os_cache_dirty_max=0,os_cache_max=0,prefix_compression=false,prefix_compression_min=4,split_deepen_min_child=0,split_deepen_per_child=0,split_pct=90,value_format=S,version=(major=1,minor=1)
 >>>>>>> d99019b... chap11. JSON-RPC 서버 만들기 (1.JSON-RPC를 웹 서버에 적용하기)
@@ -20,3 +24,5 @@ access_pattern_hint=none,allocation_size=4KB,app_metadata=,block_allocation=best
 =======
 access_pattern_hint=none,allocation_size=4KB,app_metadata=,block_allocation=best,block_compressor=,cache_resident=false,checkpoint=(WiredTigerCheckpoint.19=(addr="018781e495c09e9e9081e487ceceee9181e4adb5606d808080e3010fc0e24fc0",order=19,time=1507983037,size=32768,write_gen=35)),checkpoint_lsn=(4,28160),checksum=uncompressed,collator=,columns=,dictionary=0,encryption=(keyid=,name=),format=btree,huffman_key=,huffman_value=,id=0,ignore_in_memory_cache_size=false,internal_item_max=0,internal_key_max=0,internal_key_truncate=true,internal_page_max=4KB,key_format=S,key_gap=10,leaf_item_max=0,leaf_key_max=0,leaf_page_max=32KB,leaf_value_max=0,log=(enabled=true),memory_page_max=5MB,os_cache_dirty_max=0,os_cache_max=0,prefix_compression=false,prefix_compression_min=4,split_deepen_min_child=0,split_deepen_per_child=0,split_pct=90,value_format=S,version=(major=1,minor=1)
 >>>>>>> d145bfd... chap11. JSON-RPC 서버 만들기 (3.데이터베이스에서 사용자 리스트 조회하기)
+=======
+>>>>>>> bb88392... chap11. JSON-RPC 서버 만들기 (4.데이터 부분을 암호화하기)
