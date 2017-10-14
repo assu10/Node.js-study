@@ -32,4 +32,19 @@ Downloads
 - mysql 모듈 (https://github.com/mysqljs/mysql)
 -
 - socket.io (https://socket.io/)
+<<<<<<< HEAD
 - 
+=======
+-
+- Semantic UI 라이브러리 (http://semantic-ui.com)
+-
+- BootStrap (http://getbootstrap.com)
+
+- CSS-TRICKS (https://css-tricks.com/replicating-google-hangouts-chat), chat10 에서 사용.
+
+- JSON-RPC (http://www.jsonrpc.org), (https://en.wikipedia.org/wiki/JSON-RPC)
+
+- JSON-RPC 클라이언트 라이브러리 (https://github.com/datagraph/jquery-jsonrpc)
+
+- crypto-js (https://code.google.com/archive/p/crypto-js)
+>>>>>>> 7c1bc86... chap11. JSON-RPC 서버 만들기 (4.데이터 부분을 암호화하기)
