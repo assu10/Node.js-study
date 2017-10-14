@@ -11,11 +11,15 @@ TITLE: JsonRpc 사용하기
             http://localhost:3000/public/echo.html
             http://localhost:3000/public/echo_error.html
 <<<<<<< HEAD
+<<<<<<< HEAD
             http://localhost:3000/public/add.html
             http://localhost:3000/public/listuser.html
             http://localhost:3000/public/echo_encrypted.html
 =======
 >>>>>>> d99019b... chap11. JSON-RPC 서버 만들기 (1.JSON-RPC를 웹 서버에 적용하기)
+=======
+            http://localhost:3000/public/add.html
+>>>>>>> fe1f370... chap11. JSON-RPC 서버 만들기 (2.계산기 모듈 추가하여 실행하기)
         
 AUTHOR: Assu
 DATE: 2017.10.14
