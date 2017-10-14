@@ -205,7 +205,7 @@ var addUser = function(database, id, password, name, callback) {
     console.log('addUser 호출됨 : ' + id + ', ' + password + ', ' + name);
     
     // users 컬렉션 참조
-    var users = database.collection('users');
+    var users = database.collection('user7');
     
     // 사용자 추가
     users.insertMany([{"id":id, "password":password, "name":name}], function(err, result) {
@@ -229,14 +229,14 @@ var addUser = function(database, id, password, name, callback) {
 
 //===== 404 에러 페이지 =====//
 
-var errorHandler = expressErrorHandler({
+/*var errorHandler = expressErrorHandler({
    static: {
        '404': './public/404.html'
    } 
 });
 
 app.use(expressErrorHandler.httpError(404));
-app.use(errorHandler);
+app.use(errorHandler);*/
 
 
 

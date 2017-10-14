@@ -28,7 +28,7 @@ Schema.createUserSchema = function(mongoose) {
     // 스키마 정의
     // password를 hashed_password로 변경, 각 컬럼에 default 속성 모두 추가, salt 속성 추가
     var UserSchema = mongoose.Schema({
-        email: {type: String, required: true, unique: true, 'default': ''}
+        email: {type: String, required: true, 'default': ''}
         , assu_hashed_password: {type: String, 'default':''}
         , name: {type: String, index: 'hashed', 'default':''}
         , salt: {type: String}
