@@ -42,3 +42,5 @@ Downloads
 - JSON-RPC (http://www.jsonrpc.org), (https://en.wikipedia.org/wiki/JSON-RPC)
 
 - JSON-RPC 클라이언트 라이브러리 (https://github.com/datagraph/jquery-jsonrpc)
+
+- crypto-js (https://code.google.com/archive/p/crypto-js)

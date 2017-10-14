@@ -18,7 +18,7 @@ var handler_info = [
 	,{file:'./add', method:'add'}					// 더하기
 	//,{file:'./multiply', method:'multiply'}			// 곱하기
 	,{file:'./listuser', method:'listuser'}			// 사용자 리스트
-	/*,{file:'./echo_encrypted', method:'echo_encrypted'}			// 암호화된 echo*/
+	,{file:'./echo_encrypted', method:'echo_encrypted'}			// 암호화된 echo
 ];
 
 module.exports = handler_info;

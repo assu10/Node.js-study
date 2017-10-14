@@ -12,6 +12,7 @@ TITLE: JsonRpc 사용하기
             http://localhost:3000/public/echo_error.html
             http://localhost:3000/public/add.html
             http://localhost:3000/public/listuser.html
+            http://localhost:3000/public/echo_encrypted.html
         
 AUTHOR: Assu
 DATE: 2017.10.14
