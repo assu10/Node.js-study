@@ -10,6 +10,7 @@ TITLE: JsonRpc 사용하기
         웹브라우저에서 아래 주소의 페이지를 열고 웹페이지에서 요청
             http://localhost:3000/public/echo.html
             http://localhost:3000/public/echo_error.html
+            http://localhost:3000/public/add.html
         
 AUTHOR: Assu
 DATE: 2017.10.14
