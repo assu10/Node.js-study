@@ -38,6 +38,8 @@ function connect(app, config) {
     
     // 연결 끊어지면 5초 후 재연결
     database.db.on('disconnected', connect);
+    
+    global.database = database;
 }
 
 // config에 정의된 스키마 및 모델 객체 생성
