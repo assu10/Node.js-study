@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Echo 테스트</title>
+		
+		<script src="./jquery-3.1.1.min.js"></script>
+		<script src="jquery.jsonrpc.js"></script>
+		<script>
+			$(function() {
+                // 기본 설정
+	            $.jsonRPC.setup({
+	                endPoint : 'http://localhost:3000/api',    // 접속할 서버의 URL
+	                namespace : ''
+	            });
+	            
+                // 요청하기 버튼 클릭 시 서버에 만들어 둔 echo 함수 호출
+	            $("#requestButton").click(function() {
+	            	var message = $("#messageInput").val();
+	            
+	            	var method = 'echo';  // 서버 쪽의 함수명
+	                $.jsonRPC.request(method, {
+                        // id: 요청 ID, 서버로부터 받는 응답 구별 시 사용
+                        // params: 서버로 보낼 데이터를 넣는 배열 객체
+	                    params: [message],
+	                    success: function(data) {
+	                        println('정상 응답을 받았습니다.');
+	                        console.dir(data);
+	                        
+	                        println(data.result);
+	                    },
+	                    error: function(data) {
+	                    	println('에러 응답을 받았습니다.');
+	                    	console.dir(data);
+	                    	
+	                        println(data.error.message);
+	                    }
+	                });
+	                
+	                println('[' + method + '] method로 요청을 보냈습니다.');
+	            });
+	        });
+	        
+	        function println(data) {
+	        	$("#results").append('<p>' + data + '</p>');
+	        }
+        </script>
+        
+	</head>
+	<body>
+	
+		<h3>JSON-RPC Echo 테스트</h3>
+		<br>	
+		<textarea name="messageInput" id="messageInput"></textarea>
+		<br>
+		<input type="button" name="requestButton" id="requestButton" value="요청하기" />
+		<br>
+		<p>결과<p>
+		<div id="results"></div>	
+		
+	</body>
+</html>

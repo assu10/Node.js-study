@@ -10,9 +10,12 @@ TITLE: JsonRpc 사용하기
         웹브라우저에서 아래 주소의 페이지를 열고 웹페이지에서 요청
             http://localhost:3000/public/echo.html
             http://localhost:3000/public/echo_error.html
+<<<<<<< HEAD
             http://localhost:3000/public/add.html
             http://localhost:3000/public/listuser.html
             http://localhost:3000/public/echo_encrypted.html
+=======
+>>>>>>> d99019b... chap11. JSON-RPC 서버 만들기 (1.JSON-RPC를 웹 서버에 적용하기)
         
 AUTHOR: Assu
 DATE: 2017.10.14

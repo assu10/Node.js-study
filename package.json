@@ -27,8 +27,17 @@
     "path": "^0.12.7",
     "express-session": "^1.15.5",
     "http": "0.0.0",
+<<<<<<< HEAD
     "mongodb": "^2.2.31",
     "mongoose": "^4.11.9",
+=======
+    "jayson": "^2.0.4",
+    "moment": "^2.18.1",
+    "mongodb": "^2.2.30",
+    "mongoose": "^4.11.3",
+    "mysql": "^2.14.1",
+    "nconf": "^0.8.4",
+>>>>>>> d99019b... chap11. JSON-RPC 서버 만들기 (1.JSON-RPC를 웹 서버에 적용하기)
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1",
     "passport-local": "^1.0.0",
